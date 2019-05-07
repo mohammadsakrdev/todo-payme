@@ -1,1 +1,1 @@
-# todo-payme
+Simple TODO App built with MEAN stack
