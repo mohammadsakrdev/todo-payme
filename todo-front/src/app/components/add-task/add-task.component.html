@@ -1,6 +1,8 @@
-<form (submit)="onRegister()" class="form-horizontal" >
+<form (submit)="onAddTask()" class="form-horizontal" >
 
-  <h2>Signup</h2>
+  <h2>Add New Task</h2>
+
+
   <div class="form-group">
     <label class="col-lg-2 control-label">Name</label>
     <div class="col-lg-10">
@@ -9,16 +11,9 @@
   </div>
 
   <div class="form-group">
-    <label class="col-lg-2 control-label">Email</label>
+    <label class="col-lg-2 control-label">Completed</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" [(ngModel)]="email" name="email" >
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-lg-2 control-label">Password</label>
-    <div class="col-lg-10">
-      <input type="password" class="form-control" [(ngModel)]="password" name="password" >
+      <input type="checkbox" [(ngModel)]="done" name="done" >
     </div>
   </div>
   <div class="form-group">

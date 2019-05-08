@@ -1,3 +1,43 @@
-<p>
-  navbar works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li
+          class="nav-item"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li>
+        <li
+          class="nav-item"
+          *ngIf="_userService.isLoggedIn()"
+          [routerLinkActive]="['active']"
+        >
+          <a class="nav-link" [routerLink]="['/main']">Main</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li
+          class="nav-item"
+          *ngIf="!_userService.isLoggedIn()"
+          [routerLinkActive]="['active']"
+        >
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li
+          class="nav-item"
+          *ngIf="!_userService.isLoggedIn()"
+          [routerLinkActive]="['active']"
+        >
+          <a class="nav-link" [routerLink]="['/register']">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="_userService.isLoggedIn()">
+          <a class="nav-link" href="#" (click)="onLogOutClicked()">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
